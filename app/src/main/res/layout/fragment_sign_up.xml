@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".SignUpFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            >
+
+        <TextView
+            android:id="@+id/tvTitleSignUp"
+            style="@style/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/titleSignUp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <EditText
+            android:id="@+id/etId"
+            style="@style/etHint"
+            android:layout_marginTop="50dp"
+            android:padding="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/idForm"
+            android:background="@drawable/bg_et_common"
+            app:layout_constraintTop_toBottomOf="@id/tvTitleSignUp"
+            app:layout_constraintStart_toStartOf="@id/tvTitleSignUp"
+            app:layout_constraintEnd_toEndOf="@id/tvTitleSignUp" />
+
+            <EditText
+                android:id="@+id/etPassword"
+                style="@style/etHint"
+                android:layout_marginTop="20dp"
+                android:padding="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/passwordForm"
+                android:background="@drawable/bg_et_common"
+                app:layout_constraintTop_toBottomOf="@id/etId"
+                app:layout_constraintStart_toStartOf="@id/etId"
+                app:layout_constraintEnd_toEndOf="@id/etId" />
+
+            <EditText
+                android:id="@+id/etPasswordCheck"
+                style="@style/etHint"
+                android:layout_marginTop="20dp"
+                android:padding="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/passwordForm"
+                android:background="@drawable/bg_et_common"
+                app:layout_constraintTop_toBottomOf="@id/etPassword"
+                app:layout_constraintStart_toStartOf="@id/etPassword"
+                app:layout_constraintEnd_toEndOf="@id/etPassword" />
+
+            <EditText
+                android:id="@+id/etName"
+                style="@style/etHint"
+                android:layout_marginTop="20dp"
+                android:padding="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/nameForm"
+                android:background="@drawable/bg_et_common"
+                app:layout_constraintTop_toBottomOf="@id/etPasswordCheck"
+                app:layout_constraintStart_toStartOf="@id/etPasswordCheck"
+                app:layout_constraintEnd_toEndOf="@id/etPasswordCheck" />
+
+            <EditText
+                android:id="@+id/etNickname"
+                style="@style/etHint"
+                android:layout_marginTop="20dp"
+                android:padding="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/nicknameForm"
+                android:background="@drawable/bg_et_common"
+                app:layout_constraintTop_toBottomOf="@id/etName"
+                app:layout_constraintStart_toStartOf="@id/etName"
+                app:layout_constraintEnd_toEndOf="@id/etName" />
+
+            <EditText
+                android:id="@+id/etEmail"
+                style="@style/etHint"
+                android:layout_marginTop="20dp"
+                android:padding="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/emailForm"
+                android:background="@drawable/bg_et_common"
+                app:layout_constraintTop_toBottomOf="@id/etNickname"
+                app:layout_constraintStart_toStartOf="@id/etNickname"
+                app:layout_constraintEnd_toEndOf="@id/etNickname" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/etEmail"
+                app:layout_constraintStart_toStartOf="@id/etEmail"
+                app:layout_constraintEnd_toEndOf="@id/etEmail">
+            
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnBack"
+                style="@style/btnSignUp"
+                android:layout_weight="0.5"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/bg_btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:text="@string/back" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnComplete"
+                    style="@style/btnSignIn"
+                    android:background="@drawable/bg_btn_complete"
+                    android:layout_weight="0.5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:text="@string/complete" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</FrameLayout>

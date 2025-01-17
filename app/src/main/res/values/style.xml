@@ -15,4 +15,9 @@
         <item name="android:textSize">16sp</item>
     </style>
 
+    <style name="title">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>
