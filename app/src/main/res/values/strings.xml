@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">OnboardingAssignment</string>
+    <string name="id">아이디</string>
+    <string name="password">비밀번호</string>
+    <string name="signIn">로그인</string>
+    <string name="signUp">회원가입</string>
+    <string name="guide_google_login">구글 계정으로 간편 로그인</string>
+
 </resources>
