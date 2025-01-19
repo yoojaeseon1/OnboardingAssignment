@@ -1,4 +1,7 @@
 <resources>
+
+    <string name="server_client_id">527393220270-382qo3r42gfa795lk53q06ktm1joi4rn.apps.googleusercontent.com</string>
+
     <string name="app_name">OnboardingAssignment</string>
     <string name="id">아이디</string>
     <string name="password">비밀번호</string>
@@ -15,6 +18,23 @@
     <string name="emailForm">이메일</string>
     <string name="back">뒤로</string>
     <string name="complete">확인</string>
+
+    <string name="guide_input_id">아이디를 입력하세요.</string>
+    <string name="guide_input_pw">비밀번호를 입력하세요.</string>
+    <string name="guide_input_id_pw">아이디 / 비밀번호를 확인하세요.</string>
+    <string name="guide_check_id">아이디를 확인하세요.</string>
+    <string name="guide_check_pw">비밀번호를 확인하세요.</string>
+    <string name="guide_check_nickname">닉네임을 확인하세요.</string>
+    <string name="guide_check_name">이름을 확인하세요.</string>
+    <string name="guide_check_email">이메일을 확인하세요.</string>
+
+    <string name="complete_sign_in">로그인 성공</string>
+    <string name="complete_sign_up">회원가입 성공</string>
+
+
+    <string name="pattern_id">^(?=.*[A-Za-z])(?=.*[0-9])[A-Za-z[0-9]]{8,20}$</string>
+    <string name="pattern_pw">^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!%*#?&amp;.])[A-Za-z[0-9]$@$!%*#?&amp;.]{8,16}$</string>
+    <string name="pattern_email">비밀번호를 입력하세요.</string>
 
 
 </resources>
