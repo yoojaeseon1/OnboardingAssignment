@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "527393220270",
+    "project_id": "onboardingassignment-e46f2",
+    "storage_bucket": "onboardingassignment-e46f2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:527393220270:android:26f3cb26a5121250f62f3f",
+        "android_client_info": {
+          "package_name": "com.example.onboardingassignment"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5UcqM5DM7YxBOTgbTuWKG7Um_URCLDdI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
