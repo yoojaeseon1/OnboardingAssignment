@@ -1,61 +1,86 @@
 package com.example.onboardingassignment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
+import com.example.onboardingassignment.databinding.FragmentSignUpBinding
+import kotlinx.coroutines.launch
+import java.util.regex.Pattern
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [SignUpFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class SignUpFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    private val binding: FragmentSignUpBinding by lazy{
+        FragmentSignUpBinding.inflate(layoutInflater)
+    }
+
+    private val viewModel: SignViewModel by activityViewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-
-
-        return inflater.inflate(R.layout.fragment_sign_up, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment SignUpFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            SignUpFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initListener()
+
+    }
+
+    private fun initListener(){
+        binding.btnComplete.setOnClickListener {
+            val idPattern = Pattern.compile(getString(R.string.pattern_id))
+            val passwordPattern = Pattern.compile(getString(R.string.pattern_pw))
+            val emailPattern = android.util.Patterns.EMAIL_ADDRESS
+
+            val id = binding.etId.text.toString()
+            val password = binding.etPassword.text.toString()
+            val passwordCheck = binding.etPasswordCheck.text.toString()
+            val nickname = binding.etNickname.text.toString()
+            val name = binding.etName.text.toString()
+            val email = binding.etEmail.text.toString()
+
+            if(id.isBlank() || !idPattern.matcher(id).matches()) {
+                Toast.makeText(requireActivity(), getString(R.string.guide_check_id), Toast.LENGTH_SHORT).show()
+            } else if(password.isBlank() || passwordCheck.isBlank() || password != passwordCheck || !passwordPattern.matcher(password).matches()) {
+                Toast.makeText(requireActivity(), getString(R.string.guide_check_pw), Toast.LENGTH_SHORT).show()
+            } else if(nickname.isBlank()) {
+                Toast.makeText(requireActivity(), getString(R.string.guide_check_nickname), Toast.LENGTH_SHORT).show()
+            } else if(name.isBlank()) {
+                Toast.makeText(requireActivity(), getString(R.string.guide_check_name), Toast.LENGTH_SHORT).show()
+            } else if(email.isBlank() || !emailPattern.matcher(email).matches()) {
+                Toast.makeText(requireActivity(), getString(R.string.guide_check_email), Toast.LENGTH_SHORT).show()
+            } else {
+                lifecycleScope.launch {
+                    viewModel.createUser(UserModel(id, password, name, nickname, email))
                 }
+                Toast.makeText(requireActivity(), getString(R.string.complete_sign_up), Toast.LENGTH_SHORT).show()
+                requireActivity().supportFragmentManager.popBackStack()
             }
+
+
+        }
+
+        binding.btnBack.setOnClickListener {
+            requireActivity().supportFragmentManager.popBackStack()
+        }
+    }
+
+
+
+    companion object {
+        @JvmStatic
+        fun newInstance() = SignUpFragment()
+
     }
 }
