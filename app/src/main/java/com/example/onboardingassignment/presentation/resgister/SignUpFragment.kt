@@ -1,4 +1,4 @@
-package com.example.onboardingassignment
+package com.example.onboardingassignment.presentation.resgister
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +8,8 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
+import com.example.onboardingassignment.R
+import com.example.onboardingassignment.data.UserModel
 import com.example.onboardingassignment.databinding.FragmentSignUpBinding
 import kotlinx.coroutines.launch
 import java.util.regex.Pattern
