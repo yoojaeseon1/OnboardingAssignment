@@ -29,9 +29,7 @@ class MainActivity : AppCompatActivity() {
         if(savedInstanceState == null) {
             supportFragmentManager
                 .beginTransaction()
-//                .replace(R.id.signLayout, SignInFragment())
                 .replace(R.id.signLayout, PostListFragment())
-//                .replace(R.id.signLayout, PostCreateFragment())
                 .commit()
         }
     }
