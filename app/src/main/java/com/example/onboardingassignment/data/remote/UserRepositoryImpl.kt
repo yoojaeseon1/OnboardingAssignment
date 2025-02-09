@@ -1,6 +1,8 @@
-package com.example.onboardingassignment
+package com.example.onboardingassignment.data.remote
 
 import android.util.Log
+import com.example.onboardingassignment.data.Table
+import com.example.onboardingassignment.data.UserModel
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.firestore
 import com.google.gson.Gson

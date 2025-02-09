@@ -1,4 +1,4 @@
-package com.example.onboardingassignment
+package com.example.onboardingassignment.presentation.resgister
 
 import android.os.Bundle
 import android.util.Log
@@ -12,6 +12,9 @@ import androidx.credentials.CustomCredential
 import androidx.credentials.GetCredentialRequest
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
+import com.example.onboardingassignment.R
+import com.example.onboardingassignment.data.SignInData
+import com.example.onboardingassignment.data.UserModel
 import com.example.onboardingassignment.databinding.FragmentSignInBinding
 import com.google.android.libraries.identity.googleid.GetGoogleIdOption
 import com.google.android.libraries.identity.googleid.GoogleIdTokenCredential

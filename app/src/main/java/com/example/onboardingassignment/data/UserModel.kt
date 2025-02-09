@@ -1,4 +1,4 @@
-package com.example.onboardingassignment
+package com.example.onboardingassignment.data
 
 data class UserModel(
     val id: String = "",

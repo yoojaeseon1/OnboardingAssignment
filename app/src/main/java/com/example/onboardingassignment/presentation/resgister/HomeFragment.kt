@@ -1,10 +1,11 @@
-package com.example.onboardingassignment
+package com.example.onboardingassignment.presentation.resgister
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.onboardingassignment.data.SignInData
 import com.example.onboardingassignment.databinding.FragmentHomeBinding
 
 

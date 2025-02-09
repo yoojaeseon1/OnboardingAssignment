@@ -35,6 +35,10 @@
     <string name="pattern_id">^(?=.*[A-Za-z])(?=.*[0-9])[A-Za-z[0-9]]{8,20}$</string>
     <string name="pattern_pw">^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!%*#?&amp;.])[A-Za-z[0-9]$@$!%*#?&amp;.]{8,16}$</string>
     <string name="pattern_email">비밀번호를 입력하세요.</string>
+    <string name="input_title">제목을 입력해 주세요</string>
+    <string name="input_content">내용을 입력해주세요</string>
+    <string name="title_name">제목</string>
+    <string name="writer_name">작성자</string>
 
 
 </resources>

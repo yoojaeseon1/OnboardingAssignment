@@ -1,8 +1,10 @@
-package com.example.onboardingassignment
+package com.example.onboardingassignment.presentation.resgister
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.onboardingassignment.data.UserModel
+import com.example.onboardingassignment.data.remote.UserRepositoryImpl
 import kotlinx.coroutines.launch
 
 
